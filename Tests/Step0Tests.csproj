@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TPW\TPW.csproj" />
+    <ProjectReference Include="..\TPW\Step0.csproj" />
   </ItemGroup>
 
 </Project>
