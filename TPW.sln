@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Step0", "TPW\Step0.csproj", "{2091BEB5-2D68-415E-9C7C-067A8B15CBCE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPW", "TPW\TPW.csproj", "{2091BEB5-2D68-415E-9C7C-067A8B15CBCE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Step0Tests", "Tests\Step0Tests.csproj", "{96C695B1-77D5-40C5-A67E-F3E79D2D8837}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{96C695B1-77D5-40C5-A67E-F3E79D2D8837}"
 	ProjectSection(ProjectDependencies) = postProject
 		{2091BEB5-2D68-415E-9C7C-067A8B15CBCE} = {2091BEB5-2D68-415E-9C7C-067A8B15CBCE}
 	EndProjectSection

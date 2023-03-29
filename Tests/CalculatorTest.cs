@@ -1,8 +1,8 @@
 using Microsoft.VisualStudio.TestPlatform.TestHost;
-using Step0;
-using Calculator = Step0.Calculator;
+using TPW;
+using Calculator = TPW.Calculator;
 
-namespace Step0Tests
+namespace Tests
 {
     [TestClass]
     public class CalculatorTest
