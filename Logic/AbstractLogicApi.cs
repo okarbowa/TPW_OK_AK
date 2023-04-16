@@ -2,15 +2,14 @@
 
 namespace Logic
 {
-    public class AbstractLogicApi
+    public abstract class AbstractLogicApi
     {
         public static AbstractLogicApi CreateApi()
         {
             return new LogicApi();
         }
 
-        public abstract void CreateBall();
-
+        
     }
 
     internal class LogicApi : AbstractLogicApi

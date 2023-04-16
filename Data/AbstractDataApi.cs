@@ -1,7 +1,18 @@
 ﻿namespace Data
 {
-    public class Class1
+    public abstract class AbstractDataApi
+    {
+        public static AbstractDataApi CreateApi()
+        {
+            return new DataApi();
+        }
+
+       
+    }
+
+    internal class DataApi : AbstractDataApi
     {
 
     }
+
 }
