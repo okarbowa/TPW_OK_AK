@@ -3,31 +3,33 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{21236385-BA95-4432-90A4-2D47C6B72E49}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{21236385-BA95-4432-90A4-2D47C6B72E49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic", "Logic\Logic.csproj", "{C3FC757C-462A-4915-B4B8-472A118F1402}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logic", "Logic\Logic.csproj", "{C3FC757C-462A-4915-B4B8-472A118F1402}"
 	ProjectSection(ProjectDependencies) = postProject
 		{21236385-BA95-4432-90A4-2D47C6B72E49} = {21236385-BA95-4432-90A4-2D47C6B72E49}
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{EB85B495-90CF-43DB-8795-6BCB441FCCAA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{82C5CBEC-5354-4F44-826E-7F2CD894ADC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "Model\Model.csproj", "{82C5CBEC-5354-4F44-826E-7F2CD894ADC7}"
 	ProjectSection(ProjectDependencies) = postProject
 		{C3FC757C-462A-4915-B4B8-472A118F1402} = {C3FC757C-462A-4915-B4B8-472A118F1402}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewModel", "ViewModel\ViewModel.csproj", "{66C40E9F-7370-4809-90CC-7BC01B68FEEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ViewModel", "ViewModel\ViewModel.csproj", "{66C40E9F-7370-4809-90CC-7BC01B68FEEF}"
 	ProjectSection(ProjectDependencies) = postProject
 		{82C5CBEC-5354-4F44-826E-7F2CD894ADC7} = {82C5CBEC-5354-4F44-826E-7F2CD894ADC7}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{8CB32F32-9E27-4F9C-A0DE-3CEC689F02E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataTest", "Tests\DataTest.csproj", "{8CB32F32-9E27-4F9C-A0DE-3CEC689F02E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "View", "View\View.csproj", "{E667CC67-8F7B-45AD-82EA-CA55202B1E48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "View", "View\View.csproj", "{E667CC67-8F7B-45AD-82EA-CA55202B1E48}"
 	ProjectSection(ProjectDependencies) = postProject
 		{66C40E9F-7370-4809-90CC-7BC01B68FEEF} = {66C40E9F-7370-4809-90CC-7BC01B68FEEF}
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicTest", "LogicTest1\LogicTest.csproj", "{75CDE5D2-6119-4302-9500-4A74ED1CA151}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,10 @@ Global
 		{E667CC67-8F7B-45AD-82EA-CA55202B1E48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E667CC67-8F7B-45AD-82EA-CA55202B1E48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E667CC67-8F7B-45AD-82EA-CA55202B1E48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75CDE5D2-6119-4302-9500-4A74ED1CA151}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75CDE5D2-6119-4302-9500-4A74ED1CA151}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75CDE5D2-6119-4302-9500-4A74ED1CA151}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75CDE5D2-6119-4302-9500-4A74ED1CA151}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

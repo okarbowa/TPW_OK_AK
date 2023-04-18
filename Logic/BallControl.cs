@@ -10,7 +10,7 @@ using Data;
 
 namespace Logic
 {
-    public class BallControl : LogicAPI
+    public class BallControl : AbstractLogicAPI
     {
         private ObservableCollection<Ball> _balls = new();
         public override ObservableCollection<Ball> getCollection() { return _balls; }
@@ -42,7 +42,6 @@ namespace Logic
             ball.X += vector.X;
             ball.Y += vector.Y;
             Thread.Sleep(1);
-            /*            Thread.Sleep((int)((duration / numberOfFrames) * 100));*/
         }
 
         public override void BallsMovement()

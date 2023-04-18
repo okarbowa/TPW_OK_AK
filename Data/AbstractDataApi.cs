@@ -1,8 +1,8 @@
 ﻿namespace Data
 {
-    public abstract class AbstractDataApi
+    public abstract class AbstractDataAPI
     {
-        public static AbstractDataApi CreateApi()
+        public static AbstractDataAPI CreateAPI()
         {
             return new DataApi();
         }
@@ -10,7 +10,7 @@
        
     }
 
-    internal class DataApi : AbstractDataApi
+    internal class DataApi : AbstractDataAPI
     {
 
     }

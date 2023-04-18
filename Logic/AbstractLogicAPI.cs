@@ -11,9 +11,9 @@ using System.Drawing;
 
 namespace Logic
 {
-    public abstract class LogicAPI
+    public abstract class AbstractLogicAPI
     {
-        public static LogicAPI CreateAPI()
+        public static AbstractLogicAPI CreateAPI()
         {
             return new BallControl();
         }

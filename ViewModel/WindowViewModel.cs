@@ -9,7 +9,7 @@ namespace ViewModel
 {
     public class WindowViewModel : INotifyPropertyChanged
     {
-        private LogicAPI logicAPI;
+        private AbstractLogicAPI logicAPI;
 
         public ICommand Apply { get; set; }
         public ICommand Start { get; set; }
@@ -17,7 +17,7 @@ namespace ViewModel
 
         public WindowViewModel()
         {
-            logicAPI = LogicAPI.CreateAPI();
+            logicAPI = AbstractLogicAPI.CreateAPI();
             Apply = new Relay(() => logicAPI.CreateBall(numberOfBalls));
             Start = new Relay(() => logicAPI.BallsMovement());
         }
