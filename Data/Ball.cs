@@ -1,15 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
 
 namespace Data
 {
-    internal class Ball : BallInterface
+    public class Ball : INotifyPropertyChanged
     {
-        private double x { get; set; }
-        private double y { get; set; }
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+        protected virtual void RaisePropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private double x;
+        private double y;
+
         private double d { get; set; } = 10;
         private double xVelocity { get; set; }
         private double yVelocity { get; set; }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data
+namespace Logic
 {
-    internal interface BallInterface
+    internal class Class1
     {
     }
 }
