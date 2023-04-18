@@ -24,5 +24,10 @@ namespace View
         {
             InitializeComponent();
         }
+
+        private void numberOfBalls_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
