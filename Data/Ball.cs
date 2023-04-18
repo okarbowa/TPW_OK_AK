@@ -20,15 +20,28 @@ namespace Data
         private double x;
         private double y;
 
-        private double d { get; set; } = 10;
-        private double xVelocity { get; set; }
-        private double yVelocity { get; set; }
-
-
-        public Ball(double x, double y)
+        public double X
         {
-            this.x = x;
-            this.y = y;
+            get { return x; }
+            set { x = value; RaisePropertyChanged("X"); }
+        }
+        public double Y
+        {
+            get { return y; }
+            set { y = value; RaisePropertyChanged("Y"); }
+        }
+
+        public double d { get; private set; }
+        public double Xdestination { get; set; }
+        public double Ydestination { get; set; }
+
+        public Ball(double x, double y, double diameter, double destinationPlaneX, double destinationPlaneY)
+        {
+            this.X = x;
+            this.Y = y;
+            this.d = diameter;
+            this.Xdestination = destinationPlaneX;
+            this.Ydestination = destinationPlaneY;
         }
     }
 }
