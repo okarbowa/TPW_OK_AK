@@ -1,5 +1,5 @@
 ﻿using Data;
-using Logic;
+using Model;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -9,17 +9,17 @@ namespace ViewModel
 {
     public class WindowViewModel : INotifyPropertyChanged
     {
-        private AbstractLogicAPI logicAPI;
+        private WindowModelAbstractAPI modelAPI;
 
         public ICommand Apply { get; set; }
         public ICommand Start { get; set; }
-        public ObservableCollection<Ball> ObservCollectionOfBall => logicAPI.getCollection();
+        public ObservableCollection<Ball> ObservCollectionOfBall => modelAPI.logicAPI.getCollection();
 
         public WindowViewModel()
         {
-            logicAPI = AbstractLogicAPI.CreateAPI();
-            Apply = new Relay(() => logicAPI.CreateBall(numberOfBalls));
-            Start = new Relay(() => logicAPI.BallsMovement());
+            modelAPI = WindowModelAbstractAPI.CreateAPI();
+            Apply = new Relay(() => modelAPI.logicAPI.CreateBall(numberOfBalls));
+            Start = new Relay(() => modelAPI.logicAPI.BallsMovement());
         }
 
         private int _numberOfBalls;
