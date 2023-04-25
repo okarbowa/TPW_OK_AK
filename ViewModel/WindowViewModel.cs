@@ -13,14 +13,15 @@ namespace ViewModel
 
         public ICommand Apply { get; set; }
         public ICommand Start { get; set; }
-        public ObservableCollection<Ball> ObservCollectionOfBall => modelAPI.logicAPI.getCollection();
 
         public WindowViewModel()
         {
             modelAPI = WindowModelAbstractAPI.CreateAPI();
-            Apply = new Relay(() => modelAPI.logicAPI.CreateBall(numberOfBalls));
-            Start = new Relay(() => modelAPI.logicAPI.BallsMovement());
+            Apply = new Relay(() => modelAPI.CreateBall(numberOfBalls));
+            Start = new Relay(() => modelAPI.BallsMovement());
         }
+
+        public ObservableCollection<Ball> ObservCollectionOfBall => modelAPI.GetCollection();
 
         private int _numberOfBalls;
         public int numberOfBalls

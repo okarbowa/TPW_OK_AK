@@ -10,8 +10,10 @@ using Data;
 
 namespace Logic
 {
-    public class BallControl : AbstractLogicAPI
+    internal class BallControl : AbstractLogicAPI
     {
+        private AbstractDataAPI dataAPI=AbstractDataAPI.CreateAPI();
+
         private ObservableCollection<Ball> _balls = new();
         public override ObservableCollection<Ball> getCollection() { return _balls; }
 
