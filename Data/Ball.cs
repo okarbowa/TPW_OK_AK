@@ -1,47 +1,65 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
+using System.Drawing;
 using System.Runtime.CompilerServices;
 
 namespace Data
 {
-    public class Ball : INotifyPropertyChanged
+    public class Ball : IBall
     {
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        protected virtual void RaisePropertyChanged([CallerMemberName] string propertyName = null)
+        private void RaisePropertyChanged([CallerMemberName] string? propertyName = null)
         {
-            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private double x;
-        private double y;
+        public static int d { get; } = 20;
 
-        public double X
+        public PointF Direction { get; set; }
+
+        public PointF Position { get; private set; } = new PointF();
+
+        public int Speed { get; private set; }
+
+        private Thread thread;
+
+        public Ball(float x, float y, int speed)
         {
-            get { return x; }
-            set { x = value; RaisePropertyChanged("X"); }
+            this.Position = new PointF(x, y);
+            this.Speed = speed;
         }
-        public double Y
+
+        public void MoveBall(int Speed, PointF vector)
         {
-            get { return y; }
-            set { y = value; RaisePropertyChanged("Y"); }
+                thread = new Thread(() =>
+                {
+                    PointF vector = FindNewBallPosition(Speed);
+                    while (true)
+                    {
+                        if ((vector.X > 0 && this.Position.X > 500 - Ball.d) ||
+                            (vector.X < 0 && this.Position.X < 0) ||
+                            (vector.Y > 0 && this.Position.Y > 500 - Ball.d) ||
+                            (vector.Y < 0 && this.Position.Y < 0))
+                        {
+                            vector = FindNewBallPosition(Speed);
+                        }
+                        //notyfikacja warstwy wyższej
+                        this.Position = new PointF(Position.X + vector.X, Position.Y + vector.Y);
+                        Thread.Sleep(1);
+                    }
+                });
+                thread.Start();
         }
 
-        public double d { get; private set; }
-        public double Xdestination { get; set; }
-        public double Ydestination { get; set; }
-
-        public Ball(double x, double y, double diameter, double destinationPlaneX, double destinationPlaneY)
+        public PointF FindNewBallPosition(int Speed)
         {
-            this.X = x;
-            this.Y = y;
-            this.d = diameter;
-            this.Xdestination = destinationPlaneX;
-            this.Ydestination = destinationPlaneY;
+            Random random = new Random();
+            this.Direction = new PointF(random.Next(0, 500 - Ball.d), random.Next(0, 500 - Ball.d));
+            double length = Math.Sqrt(Math.Pow(this.Position.X - this.Position.X, 2) + Math.Pow(this.Position.Y - this.Position.Y, 2)) * Speed;
+            PointF vector = new PointF();
+            vector.X = (float)((this.Direction.X - this.Direction.X) / length);
+            vector.Y = (float)((this.Direction.Y - this.Direction.Y) / length);
+            return vector;
         }
     }
 }

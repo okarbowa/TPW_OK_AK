@@ -2,6 +2,7 @@
 using Logic;
 using System.Collections.ObjectModel;
 using System.Drawing;
+using System.Numerics;
 
 namespace Model
 {
@@ -14,7 +15,9 @@ namespace Model
         }
 
         public abstract void CreateBall(int numberOfBalls);
-        public abstract void BallsMovement();
+
+        public abstract void MoveBall(int Speed, PointF vector);
+        public abstract void InitialMoveBalls();
 
         public abstract ObservableCollection<Ball> GetCollection();
 
@@ -26,7 +29,7 @@ namespace Model
 
         public WindowModelAPI()
         {
-            logicAPI = AbstractLogicAPI.CreateAPI();
+            logicAPI = AbstractLogicAPI.CreateAPIInstance();
         }
 
 
@@ -34,10 +37,17 @@ namespace Model
         {
             logicAPI.CreateBall(numberOfBalls);
         }
-        public override void BallsMovement()
+
+        public override void MoveBall(int Speed, PointF vector)
         {
-            logicAPI.BallsMovement();
+            logicAPI.MoveBall(Speed,vector);
         }
+
+        public override void InitialMoveBalls()
+        {
+            logicAPI.InitialMoveBalls();
+        }
+
 
         public override ObservableCollection<Ball> GetCollection() 
         {

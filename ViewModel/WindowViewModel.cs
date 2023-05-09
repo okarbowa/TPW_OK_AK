@@ -18,7 +18,7 @@ namespace ViewModel
         {
             modelAPI = WindowModelAbstractAPI.CreateAPI();
             Apply = new Relay(() => modelAPI.CreateBall(numberOfBalls));
-            Start = new Relay(() => modelAPI.BallsMovement());
+            Start = new Relay(() => modelAPI.InitialMoveBalls());
         }
 
         public ObservableCollection<Ball> ObservCollectionOfBall => modelAPI.GetCollection();

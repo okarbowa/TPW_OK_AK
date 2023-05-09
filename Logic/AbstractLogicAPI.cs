@@ -13,15 +13,17 @@ namespace Logic
 {
     public abstract class AbstractLogicAPI
     {
-        public static AbstractLogicAPI CreateAPI()
+        public static AbstractLogicAPI CreateAPIInstance()
         {
             return new BallControl();
         }
 
-        public abstract ObservableCollection<Ball> getCollection();
-        public abstract void CreateBall(int numberOfBalls);
-        public abstract void MoveBall(Ball ball, double numberOfFrames, double duration, PointF vector);
-        public abstract PointF FindNewBallPosition(Ball ball, int numberOfFrames);
-        public abstract void BallsMovement();
+       public abstract ObservableCollection<Ball> getCollection();
+       public abstract void CreateBall(int numberOfBalls);
+        public abstract void InitialMoveBalls();
+
+       public abstract void MoveBall(int Speed, PointF vector);
+       //public abstract PointF FindNewBallPosition(Ball ball, int Speed);
+        //  public abstract void BallsMovement();
     }
 }
